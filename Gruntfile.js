@@ -52,41 +52,47 @@ module.exports = function(grunt) {
           //copy fonts
           { expand: true, cwd: '_working/fonts/', src: ['**'], dest: '_build/fonts/'}
         ]
+      },
+      toEC2: {
+        files: [
+          //copy build to new repo
+          { expand: true, cwd: '_build/', src: ['**'], dest: '../black-00/domains/simplecalc.co/www/'}
+        ]
       }
     },
     "http-server": {
-    'dev': {
- 
-            // the server root directory 
-            root: '_build/',
- 
-            // the server port 
-            // can also be written as a function, e.g. 
-            // port: function() { return 8282; } 
-            port: 8002,
-            
-            // the host ip address 
-            // If specified to, for example, "127.0.0.1" the server will  
-            // only be available on that ip. 
-            // Specify "0.0.0.0" to be available everywhere 
-            host: "127.0.0.1",
- 
-            cache: 0,
-            showDir : true,
-            autoIndex: true,
- 
-            // server default file extension 
-            ext: "html",
- 
-            // run in parallel with other tasks 
-            runInBackground: false
- 
-        }
+      'dev': {
+
+        // the server root directory 
+        root: '_build/',
+
+        // the server port 
+        // can also be written as a function, e.g. 
+        // port: function() { return 8282; } 
+        port: 8002,
+
+        // the host ip address 
+        // If specified to, for example, "127.0.0.1" the server will  
+        // only be available on that ip. 
+        // Specify "0.0.0.0" to be available everywhere 
+        host: "127.0.0.1",
+
+        cache: 0,
+        showDir : true,
+        autoIndex: true,
+
+        // server default file extension 
+        ext: "html",
+
+        // run in parallel with other tasks 
+        runInBackground: false
+
+      }
   },
     watch: {
       styles: {
         files: ['_working/img/*', '_working/css/**/*.less', '_working/**/*.css', '_working/**/*.js', '_working/**/*.html'], // which files to watch
-        tasks: ['less','uglify','copy'],
+        tasks: ['less','uglify','copy:main'],
         options: {
           nospawn: true
         }
@@ -104,6 +110,7 @@ module.exports = function(grunt) {
 
   //grunt.registerTask('test', ['jshint']);
 
-  grunt.registerTask('default', ['uglify', 'copy', 'less', 'watch']);
+  grunt.registerTask('default', ['less', 'uglify', 'copy:main', 'watch']);
+  grunt.registerTask('deploy', ['less', 'uglify', 'copy:main', 'copy:toEC2']);
   grunt.registerTask('server', ['http-server']);
 };
