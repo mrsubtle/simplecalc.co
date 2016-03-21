@@ -10,7 +10,8 @@ var meta = {
 	description : ''
 };
 
-Parse.initialize("uk1gTCitsaMMm7me90m6YSwUyXBHCQrXOUqzXsIk", "SR58EeX7yZzzZ2Yd8EZy6OYspcyqSjX1L22Q2Gh7");
+Parse.initialize("RGLDASQJXG3YDU1QZSPA4KPQJJMZ2BI6C4LZ3ZRG", "B4XRQMQV2BGME2QUP2680SCFFQ3KCSUDV1NJ2OKT");
+Parse.serverURL = 'http://app.simplecalc.co/';
 
 /*
 function rainbow() {

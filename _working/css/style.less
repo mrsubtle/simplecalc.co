@@ -163,27 +163,53 @@
     .flex-container;
     .flex-container-row;
   }
+  footer {
+    > div {
+      .flex-container;
+      .flex-container-row;
+    }
+  }
 
 
 // form objects
   
-  input, textarea {
+  input, textarea, select {
     -webkit-appearance: none;
     border: none;
     font-family: @typeMainFamily;
-    font-size: 1.77rem;
+    font-size: 1.27rem;
     display: block;
     width: 50vw;
     max-width: 400px;
-    margin-bottom: 3rem;
-    padding: 2rem;
+    //margin-bottom: 3rem;
+    padding: 1.25rem;
     border-radius: 0px;
-    border-left: 1px solid @tint;
+    border-bottom: 1px solid @tint;
+    background-color: transparent;
   }
 
 // objects
 
-  //nada
+  a.c2a {
+    margin-top: 4rem;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    padding: 1rem 2.7rem;
+    background-color: lighten(@tintRed,20%);
+    border-radius: 0.3rem;
+    color: @appBG;
+    opacity: 1;
+    .animate(777ms);
+    transform: scale(1);
+  }
+  a.c2a:hover {
+    //opacity: 0.57;
+    background-color: lighten(@tint,20%);
+    transform: scale(1.1);
+  }
 
 
 // section-specific
@@ -222,6 +248,45 @@
     }
   }
 
+  section#calc {
+    form {
+      display: block;
+      .flex-item;
+      margin: 10vh 10vw;
+      font-size: 1.5rem;
+      fieldset {
+        display: block;
+        border: none;
+        padding: 0; margin: 0;
+        input, select {
+          display: inline;
+          max-width: 8rem;
+          padding: 0.7rem 0.2rem;
+          margin: 0 0.5rem;
+          border: none;
+          text-align: center !important;
+          font-size: inherit;
+          color: @tint;
+        }
+        select, input:first-child {
+          max-width: 9.5rem;
+          margin-left: 0;
+          padding-left: 0;
+          text-align: left !important;
+        }
+        input#txt_amortization {
+          max-width: 2.5rem
+        }
+        input#txt_interestRate {
+          max-width: 4rem
+        }
+        input#txt_downPayment {
+          max-width: 7.5rem
+        }
+      }
+    }
+  }
+
   section#users, section#discount {
     .flex-container-column;
     background-color: darken(@appBG,3%);
@@ -236,27 +301,33 @@
       font-weight: 500;
       opacity: 0.37;
     }
-    a.c2a {
-      margin-top: 4rem;
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.12rem;
-      text-transform: uppercase;
-      padding: 1rem 2.7rem;
-      background-color: lighten(@tintRed,20%);
-      border-radius: 0.3rem;
-      color: @appBG;
-      opacity: 1;
-      .animate();
-    }
-    a.c2a:hover {
-      //opacity: 0.57;
-      background-color: lighten(@tint,20%);
-    }
   }
 
   section#discount {
     background-color: @appBG;
+  }
+
+  footer {
+    background-color: @colourMain;
+    color: @appBG;
+    small {
+      opacity: 0.67;
+    }
+    a {
+      color: @appBG;
+
+    }
+    .column {
+      text-align: center;
+      width: 33.333333333333%;
+      min-height: 25vh;
+      padding: 2rem;
+    }
+    .column:first-child {
+      text-align: left;
+    }
+    .column:last-child {
+      text-align: right;
+    }
   }
 
