@@ -7,6 +7,12 @@
 @import "prefixer.less";
 @import "../less/europa.less";
 
+// resets
+
+  * {
+    -webkit-box-sizing: border-box;
+  }
+
 // variables & mixins
 
   // typography
@@ -20,6 +26,7 @@
     @colourMain: rgba(34,34,34,1);
     @tint: #2185c5;
     @tintRed: #b76055;
+    @cardBG: #fefefe;
 
   // debug
 
@@ -125,21 +132,13 @@
       font-size: 1.3rem;
     }
   }
-
-  a.download {
-    font-weight: 500;
-    color: @tintRed;
-    text-decoration: none;
-    //border-bottom: 0.1rem solid rgba(red(@tintRed),green(@tintRed),blue(@tintRed),0);
-    opacity: 1;
-    .animate();
+  .modal {
+    h1, h2, h3, h4, h5 {
+      margin: 1rem 0;
+      padding: 0;
+      text-align: center;
+    }
   }
-  a.download:hover {
-    //border-bottom: 0.1rem solid @tintRed;
-    //opacity: 0.47;
-    color: @tint;
-  }
-
 
 // classes
 
@@ -152,27 +151,14 @@
     max-width: 960px;
   }
 
-// layout
-
-  html, body {
-    height: 100%;
-  }
-  section {
-    padding: 2rem;
-    height: 80%;
-    .flex-container;
-    .flex-container-row;
-  }
-  footer {
-    > div {
-      .flex-container;
-      .flex-container-row;
-    }
-  }
-
-
 // form objects
   
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
   input, textarea, select {
     -webkit-appearance: none;
     border: none;
@@ -187,9 +173,44 @@
     border-bottom: 1px solid @tint;
     background-color: transparent;
   }
+  button {
+    -webkit-appearance: none;
+    border: none;
+    font-family: @typeMainFamily;
+    font-size: 1.27rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    display: inline-block;
+    padding: 0.8em 1.25em;
+    border-radius: 0.3rem;
+    background-color: @tint;
+    color: @appBG;
+  }
 
 // objects
 
+  .card {
+    display: block;
+    min-height: 20rem;
+    min-width: 20rem;
+    background-color: @cardBG;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 1rem;
+  }
+  a.download {
+    font-weight: 500;
+    color: @tintRed;
+    text-decoration: none;
+    //border-bottom: 0.1rem solid rgba(red(@tintRed),green(@tintRed),blue(@tintRed),0);
+    opacity: 1;
+    .animate();
+  }
+  a.download:hover {
+    //border-bottom: 0.1rem solid @tintRed;
+    //opacity: 0.47;
+    color: @tint;
+  }
   a.c2a {
     margin-top: 4rem;
     display: inline-block;
@@ -211,12 +232,96 @@
     transform: scale(1.1);
   }
 
+// layout
+
+  html, body {
+    height: 100%;
+  }
+  #menuTop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 5rem;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.93);
+    .flex-container;
+    .flex-container-row;
+    .flex-container-spacebetween;
+    > * {
+      .flex-item;
+      margin: 0 !important;
+    }
+    a {
+      margin: 0 1.67em;
+    }
+    a.link {
+      color: @tintRed;
+      font-size: 1.17em;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0 1.67em;
+    }
+    a.link:hover {
+      color: @tint;
+    }
+  }
+  .modal {
+    position: fixed;
+    z-index: 2;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.91);
+    .card {
+      width: 50vw;
+      min-width: 20rem;
+      max-width: 50rem;
+      height: auto;
+      .flex-container;
+      form {
+        width: 100%;
+        .flex-item;
+      }
+      input {
+        width: 100% !important;
+        min-width: 100% !important;
+        text-align: center;
+      }
+      button {
+        margin-top: 2rem;
+      }
+    }
+  }
+  section {
+    padding: 2rem;
+    height: 80%;
+    .flex-container;
+    .flex-container-row;
+  }
+  footer {
+    > div {
+      .flex-container;
+      .flex-container-row;
+    }
+  }
+
+
 
 // section-specific
+
+  #login.modal {
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/bg-01.jpg');
+  }
 
   section#hero {
     //nada
     height: 75%;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/bg-00.jpg');
     #mockup, #download {
       .flex-item;
       .flex-container;

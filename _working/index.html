@@ -24,6 +24,40 @@
 </head>
 <body>
 
+<div id="menuTop">
+  <span class="left"></span>
+  <span class="center"></span>
+  <span class="right">
+    <a href="#login" class="link">
+      Login
+    </a>
+    <a href="#signup" class="c2a">
+      Signup
+    </a>
+  </span>
+</div>
+
+<div id="login" class="modal flex-container hidden">
+  <div class="card flex-item">
+    <form action="#" id="frm_login">
+      <fieldset>
+        <input type="email" id="txt_username" placeholder="you@server.net">
+      </fieldset>
+      <fieldset>
+        <input type="password" id="txt_password" placeholder="password">
+      </fieldset>
+      <button type="submit">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+<div id="signup" class="modal flex-container hidden">
+  <div class="card flex-item">
+    <h2>Signup</h2>
+  </div>
+</div>
+
 <section id="hero">
   <div id="mockup">
     <div style="min-width: 0;"><img src="img/mockup.png" alt="SimpleCalc 2.0 Coming Soon!"></div>
@@ -80,7 +114,7 @@
 
 <section id="discount">
   <h1>
-    Member of a local Real Estate Board/Association?
+    Member of a local Real Estate Board or Association?
   </h1>
   <p>
     We'll give you $5 off each month on your subscription.  Why?  Because you're awesome, silly.
@@ -112,6 +146,8 @@
     </div>
   </div>
 </footer>
+
+<div class="overlay"></div>
 
 <script src="js/lib/jquery-2.1.4.min.js"></script>
 <script src="js/lib/jquery.color-2.1.2.min.js"></script>
