@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SimpleCalc - Canada's Simplest Mortgage Calculator</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+<div id="menuTop">
+  <span class="left"></span>
+  <span class="center"></span>
+  <span class="right">
+    <a href="#login" class="link">
+      Login
+    </a>
+    <a href="#signup" class="c2a">
+      Signup
+    </a>
+  </span>
+</div>
+
+<div id="login" class="modal flex-container hidden">
+  <div class="card flex-item">
+    <form action="#" id="frm_login">
+      <fieldset>
+        <input type="email" id="txt_username" placeholder="you@server.net">
+      </fieldset>
+      <fieldset>
+        <input type="password" id="txt_password" placeholder="password">
+      </fieldset>
+      <button type="submit">
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+<div id="signup" class="modal flex-container hidden">
+  <div class="card flex-item">
+    <h2>Signup</h2>
+  </div>
+</div>
+
+<section id="hero">
+  <div id="mockup">
+    <div style="min-width: 0;"><img src="img/mockup.png" alt="SimpleCalc 2.0 Coming Soon!"></div>
+  </div>
+  <div id="download">
+    <div style="min-width: 0;"><img src="img/hero@2x.png" alt="SimpleCalc - Simple Canadian Mortgage Calculator" id="img_hero"></div>
+    <a class="download" id="a_AppStore_Download" href="https://geo.itunes.apple.com/ca/app/simple-canadian-mortgage-calculator/id670753330?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
+    <a class="download" id="a_GooglePlay_Download" href="https://play.google.com/store/apps/details?id=com.n2d.SimpleCanadianMortgage&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" style="max-height:40px;width:auto;" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" /></a>
+  </div>
+</section>
+
+<section id="calc">
+  <form action="#" id="frm_calc">
+    <fieldset>
+      <input type="text" id="txt_homePrice" placeholder="$250,000"> home,
+    </fieldset>
+    <fieldset>
+      less&nbsp;&nbsp;<input type="text" id="txt_downPayment" placeholder="$25,000"> down,
+    </fieldset>
+    <fieldset>
+      for&nbsp;&nbsp;<input type="text" id="txt_amortization" placeholder="25"> years
+    </fieldset>
+    <fieldset>
+      at&nbsp;&nbsp;<input type="text" id="txt_interestRate" placeholder="6.25">% 
+    </fieldset>
+    <fieldset>
+      <select id="sel_frequency">
+        <option value="52">weekly</option>
+        <option value="26">bi-weekly</option>
+        <option value="24">semi-monthly</option>
+        <option value="12">monthly</option>
+        <option value="4">quarterly</option>
+        <option value="2">semi-annually</option>
+        <option value="1">annually</option>
+      </select> is <span id="sp_payment">$$$$</span>
+    </fieldset>
+  </form>
+</section>
+
+<section id="users">
+  <h1>
+    Are you a real-estate professional?
+  </h1>
+  <p>
+    Directly target <strong>1,700 daily users</strong>, and over <strong>50,000 active home-buyers</strong> each month!
+  </p>
+  <small>
+    By the way, our userbase grows an average of 5-7% monthly.  Booya.
+  </small>
+  <a href="#" class="c2a" id="a_subscribe">
+    Subscribe
+  </a>
+</section>
+
+<section id="discount">
+  <h1>
+    Member of a local Real Estate Board or Association?
+  </h1>
+  <p>
+    We'll give you $5 off each month on your subscription.  Why?  Because you're awesome, silly.
+  </p>
+  <small>
+    Seriously, you rock.  Home-buyers need you on your top-game.  You should be rewarded for it.
+  </small>
+  <a href="#" class="c2a" id="a_enterDiscount">
+    Enter your code
+  </a>
+</section>
+
+<section id="footer-separator">
+  <a href="" class="title-c2a"></a>
+</section>
+
+<footer>
+  <div class="restrict960">
+    <div class="column">
+      <small>
+        &copy; Copyright 2016, Black Digital Agency, Inc.
+      </small>
+    </div>
+    <div class="column">
+      <a href="#">two</a>
+    </div>
+    <div class="column">
+      <a href="#">three</a>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay"></div>
+
+<script src="js/lib/jquery-2.1.4.min.js"></script>
+<script src="js/lib/jquery.color-2.1.2.min.js"></script>
+<script src="js/lib/jquery.vide.js"></script>
+<script src="js/lib/jquery.smooth-scroll.min.js"></script>
+<script src="js/lib/hammer.min.js"></script>
+<script src="js/lib/hammer-time.min.js"></script>
+<script src="js/lib/jquery.hammer.js"></script>
+<script src="js/lib/parse-1.6.14.min.js"></script>
+<script src="js/core.min.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71481905-2', 'auto');
+  ga('require', 'linkid');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
