@@ -150,20 +150,66 @@
   header {
     height: 90%;
     background-color: lighten(@colourMain, 10%);
-    background-image: url(../img/bg-02.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(../img/bg-02-iPhones.png), url(../img/bg-02.jpg);
+    background-position: 50% 50%, 50% 50%;
+    background-size: contain, cover;
+    background-repeat: no-repeat, no-repeat;
     nav {
       padding: 6em 0;
-      a {
-        color: @colourMain;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.87em;
-        font-weight: bold;
-        padding-right: 2em; 
+      @media screen and (max-width: 768px) {
+        padding: 2em 0;
       }
+      line-height: 90px;
+      img.brand {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+    .text-centered-mobile {
+      @media screen and (max-width: 768px) {
+        text-align: center !important;
+      }
+    }
+  }
+
+  section.feature {
+    height: 45%;
+    .flex-container;
+    h1, p, small, a {
+      .flex-item;
+      text-align: center;
+      padding: 0 2em;
+    }
+    h1 {
+      strong {
+        opacity: 0.87;
+        font-size: 0.87em;
+        color: @tintRed;
+        text-transform: uppercase;
+      }
+    }
+    a.c2a {
+      margin-top: 4rem;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.12rem;
+      text-transform: uppercase;
+      padding: 1rem 2.7rem;
+      background-color: lighten(@tintRed,20%);
+      border-radius: 0.3rem;
+      color: @appBG;
+      opacity: 1;
+      .animate(777ms);
+      transform: scale(1);
+    }
+    a.c2a:hover {
+      //opacity: 0.57;
+      background-color: lighten(@tint,20%);
+      transform: scale(1.1);
+    }
+    &:nth-child(odd) {
+      background-color: darken(@appBG, 5%);
     }
   }
 
@@ -202,7 +248,7 @@
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        line-height: 3.5em;
+        line-height: 60px;
         font-size: 0.87em;
       }
     }
